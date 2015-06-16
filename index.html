@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://pozitron57.github.io/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://pozitron57.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-install-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/20/install-hexo/" class="article-date">
+  <time datetime="2020-08-20T10:00:00.000Z" itemprop="datePublished">2020-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Руководства/">Руководства</a>►<a class="article-category-link" href="/categories/Руководства/Генераторы-статических-сайтов/">Генераторы статических сайтов</a>►<a class="article-category-link" href="/categories/Руководства/Генераторы-статических-сайтов/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/20/install-hexo/">Установка Hexo и размещение сайта на Github Pages</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>Это страница очень рекурсивна: это страница-пример выполнения инструкций на этой странице! Оригинал записи находится на <a href="http://lisakov.com/blog/2015/06/14/install-hexo/">lisakov.com</a>.</em></p>
+<p><a href="http://hexo.io">Hexo</a> — это генератор статических сайтов, подобный Jekyll, Pelican, Octopress, Hugo и т.д.</p>
+<h2 id="Что_такое_генераторы_статических_сайтов_и_зачем_они_нужны?">Что такое генераторы статических сайтов и зачем они нужны?</h2><p>Сайт, который Вы читаете прямо сейчас — статический. Все странички здесь — это обычные html файлы. Большинство статических журналов создаются с помощью различных генераторов статических сайтов.</p>
+<p>Зачем они нужны, эти генераторы? Ведь можно, например, написать самому CSS- и html-код для каждой страницы своего сайта. Но при добавлении, например, записи в журнал каждый раз придётся переделывать страницу со списком записей, ленту записей, ссылки под статьёй (на следующую и предыдущую статью) и пр. Всё это и многое другое автоматически умеют делать генераторы, обширный список которых можно найти тут: staticsitegenerators.net.</p>
+<p>Пользуясь генератором, Вы создаёте обычные текстовые файлы для записей и страниц, html-кода в них нет. Очень популярным форматом (но не единственным) является язык разметки Markdown (по ссылке много понятных примеров). Когда Вы довольны структурой сайта и содержанием записей, Вы запускаете генератор. Он съедает ваши текстовые файлы и генерирует html-файлы, которые остаётся только выложить на сайт.</p>
+<p>Все эти генераторы очень похожи один на другой, причём для пользователя совершенно неважно, на чём они работают: ruby, python, javascript, go или что-то ещё. Мне было интересно посмотреть на несколько генераторов, и я немного поигрался с Octopress, Hexo и Hugo. Из отличий я заметил только скорость генерации сайта. Октопрессу для того, чтобы сгенерировать мой сайт, нужно 2-3 секунды, Hexo — 1-2 секунды, а Hugo справляется за десятую долю секунды. Ещё легче всего было установить Hugo: для Ubuntu существует .deb пакет, который легко устанавливается через менеджер приложений. А по сути все эти генераторы одинаковые.</p>
+<p>Сайт, который Вы сейчас читаете, был создан с нуля с помощью Hexo и размещён на Github Pages примерно за полчаса. Документация по Hexo на официальном сайте неплохая, но всё же там отсутствуют некоторые необходимые вещи, которые приходилось выискивать.</p>
+<p>Итак, поехали. Устанавливаем генератор статических сайтов Hexo на Линукс и делаем сайт доступным по адресу имя_сайта.github.io. В результате выполнения действий, указанных ниже, Вы получите точно такой же сайт, как этот. Если всё пойдёт гладко, то меньше чем через час Вы уже сможете разослать ссылки на свой новый блог своим друзьям. Уже потом Вы наверняка захотите сменить тему, добавить комментарии, Google Analytics и прочее, руководствуясь инструкциями с <a href="http://hexo.io/docs/">официального сайта Hexo</a>. Всё это делается довольно просто.</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/08/20/install-hexo/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pozitron57.github.io/2020/08/20/install-hexo/" data-id="ciaz6q5is000cgea70i2s4ve9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github-Pages/">Github Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/16/hello-world/" class="article-date">
+  <time datetime="2015-06-16T10:53:14.000Z" itemprop="datePublished">2015-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/16/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pozitron57.github.io/2015/06/16/hello-world/" data-id="ciaz6q5gr0000gea7iqil4j8r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-my-first-post" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/16/my-first-post/" class="article-date">
+  <time datetime="2015-06-16T09:49:05.000Z" itemprop="datePublished">2015-06-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Тестовые-записи/">Тестовые записи</a>►<a class="article-category-link" href="/categories/Тестовые-записи/Первые-записи/">Первые записи</a>►<a class="article-category-link" href="/categories/Тестовые-записи/Первые-записи/Несметное-богатство/">Несметное богатство</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/16/my-first-post/">Моя первая запись. Пара примеров разметки Markdown.</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Эта запись была сгенерирована из такого Markdown-файла:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">title: Моя первая запись. Пара примеров разметки Markdown.</span><br><span class="line">date: 2015-06-16 11:49:05</span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">- </span>test</span><br><span class="line"><span class="bullet">- </span>Markdown</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>Тестовые записи</span><br><span class="line"><span class="bullet">- </span>Первые записи</span><br><span class="line"><span class="header">- Несметное богатство</span><br><span class="line">---</span></span><br><span class="line"></span><br><span class="line"><span class="header"># Это тестовая запись.</span></span><br><span class="line"><span class="header">## Этот заголовок немного поменьше.</span></span><br><span class="line"><span class="header">###### Заголовок.</span></span><br><span class="line"></span><br><span class="line">К сожалению, <span class="emphasis">*большинство*</span> людей слишком легкомысленно относится к содержанию тестовых записей. Я не из их числа, но означает ли это, что я не <span class="strong">**человек?**</span></span><br><span class="line"></span><br><span class="line">Чтобы обновить <span class="code">`Ubuntu`</span>, выполните команды</span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="code">    sudo apt-get update</span></span><br><span class="line"><span class="code">    sudo apt-get upgrade</span></span><br><span class="line"></span><br><span class="line">Затем можно составить список дел на вчерашний вечер:</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>Раскачать лодку</span><br><span class="line"><span class="bullet">1. </span>Употребить жимолость внутрь.</span><br><span class="line"><span class="bullet">1. </span>Солнечная корона разогрета до полутора миллионов градусов по следующим причинам:</span><br><span class="line"><span class="code">    + Подфотосферная турбулентная конвекция </span></span><br><span class="line"><span class="code">    + диссипация энергии конвективных токов</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line"></span><br><span class="line">Не забудьте посмотреть на эту картинку на прощание: </span><br><span class="line"></span><br><span class="line">![<span class="link_label">Изумительная картинка</span>](<span class="link_url">http://lisakov.com/snmodels/slow.gif</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="Это_тестовая_запись-">Это тестовая запись.</h1><h2 id="Этот_заголовок_немного_поменьше-">Этот заголовок немного поменьше.</h2><h6 id="Заголовок-">Заголовок.</h6><p>К сожалению, <em>большинство</em> людей слишком легкомысленно относится к содержанию тестовых записей. Я не из их числа, но означает ли это, что я не <strong>человек?</strong></p>
+<p>Чтобы обновить <code>Ubuntu</code>, выполните команды</p>
+<pre><code>sudo apt-<span class="built_in">get</span> <span class="keyword">update</span>
+sudo apt-<span class="built_in">get</span> upgrade
+</code></pre><p>Затем можно составить список дел на вчерашний вечер:</p>
+<ol>
+<li>Раскачать лодку</li>
+<li>Употребить жимолость внутрь.</li>
+<li>Солнечная корона разогрета до полутора миллионов градусов по следующим причинам:<ul>
+<li>Подфотосферная турбулентная конвекция </li>
+<li>диссипация энергии конвективных токов</li>
+</ul>
+</li>
+</ol>
+<p>Внимание, ссылка: <a href="http://pozitron57.github.io/2015/06/14/2015-06-14-install-hexo/">перейти к записи по установке Hexo</a></p>
+<p>Не забудьте посмотреть на эту картинку на прощание: </p>
+<p><img src="http://lisakov.com/snmodels/slow.gif" alt="Изумительная картинка"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pozitron57.github.io/2015/06/16/my-first-post/" data-id="ciaz9q17f0000t6a7fwje9cxc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Руководства/">Руководства</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Руководства/Генераторы-статических-сайтов/">Генераторы статических сайтов</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Руководства/Генераторы-статических-сайтов/Hexo/">Hexo</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Тестовые-записи/">Тестовые записи</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Тестовые-записи/Первые-записи/">Первые записи</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Тестовые-записи/Первые-записи/Несметное-богатство/">Несметное богатство</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-Pages/">Github Pages</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Github-Pages/" style="font-size: 10px;">Github Pages</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/test/" style="font-size: 20px;">test</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">август 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">июнь 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/20/install-hexo/">Установка Hexo и размещение сайта на Github Pages</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/16/my-first-post/">Моя первая запись. Пара примеров разметки Markdown.</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Вася Пупкин<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

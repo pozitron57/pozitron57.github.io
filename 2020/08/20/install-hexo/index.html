@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Установка Hexo и размещение сайта на Github Pages | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Это страница очень рекурсивна: это страница-пример выполнения инструкций на этой странице! Оригинал записи находится на lisakov.com.
+Hexo — это генератор статических сайтов, подобный Jekyll, Pelican,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Установка Hexo и размещение сайта на Github Pages">
+<meta property="og:url" content="http://pozitron57.github.io/2020/08/20/install-hexo/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Это страница очень рекурсивна: это страница-пример выполнения инструкций на этой странице! Оригинал записи находится на lisakov.com.
+Hexo — это генератор статических сайтов, подобный Jekyll, Pelican,">
+<meta property="og:updated_time" content="2015-06-16T11:36:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Установка Hexo и размещение сайта на Github Pages">
+<meta name="twitter:description" content="Это страница очень рекурсивна: это страница-пример выполнения инструкций на этой странице! Оригинал записи находится на lisakov.com.
+Hexo — это генератор статических сайтов, подобный Jekyll, Pelican,">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://pozitron57.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-install-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/20/install-hexo/" class="article-date">
+  <time datetime="2020-08-20T10:00:00.000Z" itemprop="datePublished">2020-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Руководства/">Руководства</a>►<a class="article-category-link" href="/categories/Руководства/Генераторы-статических-сайтов/">Генераторы статических сайтов</a>►<a class="article-category-link" href="/categories/Руководства/Генераторы-статических-сайтов/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Установка Hexo и размещение сайта на Github Pages
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>Это страница очень рекурсивна: это страница-пример выполнения инструкций на этой странице! Оригинал записи находится на <a href="http://lisakov.com/blog/2015/06/14/install-hexo/" target="_blank" rel="external">lisakov.com</a>.</em></p>
+<p><a href="http://hexo.io" target="_blank" rel="external">Hexo</a> — это генератор статических сайтов, подобный Jekyll, Pelican, Octopress, Hugo и т.д.</p>
+<h2 id="Что_такое_генераторы_статических_сайтов_и_зачем_они_нужны?">Что такое генераторы статических сайтов и зачем они нужны?</h2><p>Сайт, который Вы читаете прямо сейчас — статический. Все странички здесь — это обычные html файлы. Большинство статических журналов создаются с помощью различных генераторов статических сайтов.</p>
+<p>Зачем они нужны, эти генераторы? Ведь можно, например, написать самому CSS- и html-код для каждой страницы своего сайта. Но при добавлении, например, записи в журнал каждый раз придётся переделывать страницу со списком записей, ленту записей, ссылки под статьёй (на следующую и предыдущую статью) и пр. Всё это и многое другое автоматически умеют делать генераторы, обширный список которых можно найти тут: staticsitegenerators.net.</p>
+<p>Пользуясь генератором, Вы создаёте обычные текстовые файлы для записей и страниц, html-кода в них нет. Очень популярным форматом (но не единственным) является язык разметки Markdown (по ссылке много понятных примеров). Когда Вы довольны структурой сайта и содержанием записей, Вы запускаете генератор. Он съедает ваши текстовые файлы и генерирует html-файлы, которые остаётся только выложить на сайт.</p>
+<p>Все эти генераторы очень похожи один на другой, причём для пользователя совершенно неважно, на чём они работают: ruby, python, javascript, go или что-то ещё. Мне было интересно посмотреть на несколько генераторов, и я немного поигрался с Octopress, Hexo и Hugo. Из отличий я заметил только скорость генерации сайта. Октопрессу для того, чтобы сгенерировать мой сайт, нужно 2-3 секунды, Hexo — 1-2 секунды, а Hugo справляется за десятую долю секунды. Ещё легче всего было установить Hugo: для Ubuntu существует .deb пакет, который легко устанавливается через менеджер приложений. А по сути все эти генераторы одинаковые.</p>
+<p>Сайт, который Вы сейчас читаете, был создан с нуля с помощью Hexo и размещён на Github Pages примерно за полчаса. Документация по Hexo на официальном сайте неплохая, но всё же там отсутствуют некоторые необходимые вещи, которые приходилось выискивать.</p>
+<p>Итак, поехали. Устанавливаем генератор статических сайтов Hexo на Линукс и делаем сайт доступным по адресу имя_сайта.github.io. В результате выполнения действий, указанных ниже, Вы получите точно такой же сайт, как этот. Если всё пойдёт гладко, то меньше чем через час Вы уже сможете разослать ссылки на свой новый блог своим друзьям. Уже потом Вы наверняка захотите сменить тему, добавить комментарии, Google Analytics и прочее, руководствуясь инструкциями с <a href="http://hexo.io/docs/" target="_blank" rel="external">официального сайта Hexo</a>. Всё это делается довольно просто.</p>
+<a id="more"></a>
+<h2 id="Установка_Hexo">Установка Hexo</h2><ol>
+<li><p>Установите <a href="https://git-scm.com/book/ru/v1/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-Git" target="_blank" rel="external">git</a>, если он ещё не установлен. В Убунту это можно сделать так (для инструкций для других ОС следуйте по <a href="https://git-scm.com/book/ru/v1/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-Git" target="_blank" rel="external">ссылке</a>): </p>
+<pre><code>sudo apt-<span class="keyword">get</span> install git
+</code></pre></li>
+<li><p>Нам нужен <a href="https://nodejs.org" target="_blank" rel="external">node.js</a>. Лучше всего будет установить Node Version Manager (nvm), а из него уже будет легко пользоваться необходимой версией node.js. Чтобы установить <code>nvm</code>, воспользуйтесь либо утилитой <code>wget</code>,</p>
+<pre><code>wget -qO- http<span class="variable">s:</span>//raw.github.<span class="keyword">com</span>/creationix/nvm/master/install.<span class="keyword">sh</span> | <span class="keyword">sh</span>
+</code></pre><p>либо утилитой <code>curl</code>:</p>
+<pre><code>curl -L http<span class="variable">s:</span>//raw.github.<span class="keyword">com</span>/creationix/nvm/master/install.<span class="keyword">sh</span> | <span class="keyword">sh</span>
+</code></pre><p>После этого появится директория <code>~/.nvm</code> (как обычно, чтобы её увидеть в терминале, надо выполнять <code>ls -a</code>, т.к. имя её начинается с точки). Чтобы начать пользоваться nvm, нужно перезапустить терминал (иногда, говорят, нужна даже перезагрузка). Затем нужно выполнить команды:</p>
+<pre><code><span class="bullet">. </span>~/.nvm/nvm.sh
+</code></pre><p>чтобы активировать nvm, и </p>
+<pre><code>nvm <span class="keyword">install</span> <span class="number">0.12</span>
+</code></pre></li>
+<li><p>Наконец, устанавливаем Hexo:</p>
+<pre><code>npm install -<span class="keyword">g</span> hexo-<span class="keyword">cli</span>
+</code></pre><p>Если терминал ругается и не выполняет команду, попробуйте сначала сделать <code>nvm use 0.12</code>.</p>
+<p>На этом установка закончена. Если на каком-то этапе возникли трудности, обязательно дайте знать в комментариях, попробуем разобраться вместе.</p>
+<p>Приступаем к настройке.</p>
+</li>
+</ol>
+<h2 id="Базовая_настройка_и_использование_Hexo">Базовая настройка и использование Hexo</h2><p>По настройке уже можно пользоваться <a href="http://hexo.io/docs/setup.html" target="_blank" rel="external">документацией с сайта</a>, проблем у меня не возникло. Для полноты картины приведу здесь необходимый минимум команд, но за полной информацией отправляйтесь на официальный сайт Hexo.</p>
+<p>Создайте директорию, где будет лежать hexo, войдите в неё и выполните <code>hexo init .</code>. Для определённости установим hexo в <code>/home/user</code>, т.е. в <code>~/</code>.</p>
+<pre><code><span class="built_in">mkdir</span> ~/hexo
+<span class="built_in">cd</span> ~/hexo
+hexo init .
+</code></pre><p>не забудьте точку в последней команде, она означает текущую директорию. Теперь в <code>~/hexo</code> должно появиться:</p>
+<pre><code>.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── scripts
+├── source
+<span class="string">|   ├── _drafts</span>
+<span class="string">|   └── _posts</span>
+└── themes
+</code></pre><p>Чтобы установить необходимые модули, надо выполнить</p>
+<pre><code>npm <span class="keyword">install</span>
+</code></pre><p>после чего появится новая директория <code>node_modules</code> со стандартными модулями. Туда же будут устанавливаться новые модули.</p>
+<p>Теперь, чтобы посмотреть результат генерации файлов на локальной машине, выполните </p>
+<pre><code>hexo <span class="keyword">server</span>
+</code></pre><p>Если всё в порядке, то появится сообщение: <code>INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop</code>. Введя этот адрес в браузере (или щёлкнув на него средней кнопкой мыши) можно будет увидеть, что получилось. А получиться должно так, что на первой странице будет запись под заголовком «Hello World». Она появилась, потому что в <code>source/_posts/</code> лежит файл <code>hello-world.md</code>. Откройте его в любимом текстовом редакторе, сравните с готовым результатом в браузере, и через пару минут пристального всматривания Вы поймёте, что такое язык разметки Markdown и как с его помощью писать записи. Добавить новую запись можно так:</p>
+<pre><code>hexo <span class="built_in">new</span> <span class="built_in">post</span> <span class="string">'my-first-post'</span>
+</code></pre><p>Эта команда создаёт файл <code>my-first-post.md</code> в <code>source/_posts/</code> со стандартной шапкой:</p>
+<pre><code>title: my-first-post
+date: 2015-06-16 11:49:05
+<span class="header">tags:
+---</span>
+</code></pre><p>С таким же успехом его можно было создать вручную. Добавьте после шапки (т.е. после трёх дефисов) пару строк, сохраните файл и снова выполните <code>hexo server</code>. То, что вы написали, будет обработано процессором Markdown. Подробнее про этот язык разметки я написал <a href="/2015/06/16/my-first-post/">тут</a>.</p>
+<p>Вот и новая запись появилась. Блог готов. Осталось теперь разместить его в интернете. Это можно сделать быстро и бесплатно с помощью сервиса <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>. Ещё у меня есть <a href="http://lisakov.com/blog/2014/11/05/setup-nginx-ssh-octopress/" target="_blank" rel="external">запись</a> с подробной информацией на тему хостингов, доменов и всего необходимого для разворачивания сайта. Ниже я расскажу, как запустить сайт с адресом <code>логин.github.io</code> и удобно заливать туда сайт, используя Hexo.</p>
+<h3 id="Размещаем_сайт_в_интернете-">Размещаем сайт в интернете.</h3><ol>
+<li><p>Регистрируйтесь на <a href="http://github.com" target="_blank" rel="external">github.com</a> и входите в свой аккаунт. Активируйте аккаунт с помощью инструкций в письмах, которые придут по указанному при регистрации адресу.</p>
+</li>
+<li><p><a href="https://github.com/new" target="_blank" rel="external">Создайте новый репозиторий</a> (ссылка сработает только для зарегистрированного и вошедшего пользователя) с таким названием: <code>логин.github.io</code>. Например, мой логин на гитхабе — <code>pozitron57</code>, поэтому репозиторий я назвал <code>pozitron57.github.io</code>. Чтобы репозиторий начал работу, надо создать в нём какой-нибудь файл. Github предложит создать README.md, так что просто щёлкните на эту ссылку и впишите что-нибудь. Нажмите кнопку «Commit new file». Готово, репозиторий создан.</p>
+</li>
+<li><p>Итак, Hexo установлен и генерирует страницы, а наш репозиторий на github.com готов к размещению сайта. Осталось научиться сайт с помощью Hexo заливать на github.com. Установим необходимый модуль для Hexo (при этом надо находиться там, куда установлен Hexo, например, в <code>~/hexo</code>:</p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span>
+</code></pre><p>Затем открывайте <code>_config.yml</code>, что лежит в <code>~/hexo</code>, ищите параметры <code>url</code> и <code>deploy</code> и приводите их к такому виду:</p>
+<pre><code><span class="attribute">url</span>: <span class="string">http://логин.github.io</span>
+
+<span class="less"><span class="attribute">deploy</span>:
+  <span class="attribute">type</span>: git
+  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/логин/логин.github.io</span></span>
+</code></pre><p>Поменяйте <code>логин</code> на ваш логин на Github. Затем выполняйте</p>
+<pre><code>hexo <span class="keyword">ge</span><span class="label">nerate</span>
+</code></pre><p>В результате появится директория <code>~/hexo/public</code> со сгенерированными html-файлами. Чтобы отправить эти файлы на Github, выполните</p>
+<pre><code><span class="title">hexo</span> deploy
+</code></pre><p>Будет предложено ввести имя пользователя и пароль. После сообщения <code>INFO  Deploy done: git</code> открывайте в браузере <a href="http://логин.github.io" target="_blank" rel="external">http://логин.github.io</a>. Там должен появиться журнал, сгенерированный Hexo. Если выскакивает ошибка 404, то проверьте сначала, обновился ли репозиторий. Просмотрите его в браузере по адресу <a href="http://github.com/логин/логин.github.io" target="_blank" rel="external">http://github.com/логин/логин.github.io</a> (или можно просто в своём гитхабовском аккаунте выбрать нужный репозиторий). Если там лежит файл <code>index.html</code> и директории <code>archives</code>, <code>css</code>, <code>js</code>, то проверьте почту, которую указывали при регистрации на github и убедитесь, что выполнили все инструкции оттуда, нажали все необходимые ссылки, чтобы активировать аккаунт. Если это всё равно не помогло, внимательно проделайте все шаги заново.</p>
+<p>Вместо последовательного выполнения <code>hexo generate</code> и  <code>hexo deploy</code> можно выполнять<br><code>hexo generate --deploy</code> или <code>hexo generate -d</code>.</p>
+<p>Итак, бесплатный статический блог развёрнут. На нём нет рекламы, его страницы легки. Вы можете менять темы, настраивать темы, устанавливать плагины. Такие сайты делают интернет быстрее и лучше!</p>
+<p>Ещё одна хорошая новость: если захочется купить себе доменное имя (lisakov.com, например, стоит 600 рублей в год), его будет очень просто прикрутить к Github Pages. Достаточно будет создать файл с именем <code>CNAME</code> в репозитории, в содержании которого нужно указать указать желаемый домен без <code>http://</code>, например, <code>sitename.com</code>. Подробнее можно узнать на сайте <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/" target="_blank" rel="external">Github Pages</a>. Чтобы создать файл <code>CNAME</code> с помощью Hexo, просто создайте <code>~/hexo/source/CNAME</code> с необходимым содержанием. При выполнении <code>hexo deploy</code> этот файл будет обновляться на Github Pages.</p>
+<p>Что, если Вам надоест Hexo и захочется воспользоваться другим генератором статических сайтов? Нет ничего проще: установите любой другой генератор, скопируйте все записи из <code>source/_posts</code> туда, где хранятся записи у нового генератора. Готово! К примеру, эта запись и её <a href="http://lisakov.com/blog/2015/06/14/install-hexo/" target="_blank" rel="external">оригинал на lisakov.com</a> генерируются из одного и того же текстового файла (с точностью до шапки и смысловых различий), потому что и Octopress, используемый на lisakov.com, и Hexo, использованное тут, умеют работать с языком разметки Markdown.</p>
+<p>Если у Вас что-то не получилось или есть вопросы, обязательно пишите в комментариях.</p>
+</li>
+</ol>
+<h2 id="Сменить_тему">Сменить тему</h2><p>Темы для Hexo доступны красивые. <a href="http://hexo.io/themes/" target="_blank" rel="external">Вот они</a>. Выбирайте приглянувшуюся и следуйте инструкциям по установке. Скажем, вы выбрали тему <a href="http://hexo.io/hexo-theme-light/" target="_blank" rel="external">Light</a>. Заходите в директорию с Hexo и выполняйте:</p>
+<pre><code>git clone <span class="string">git:</span><span class="comment">//github.com/tommy351/hexo-theme-light.git themes/light</span>
+</code></pre><p>Чтобы активировать тему, измените параметр <code>theme:</code> в <code>_config.yml</code></p>
+<pre><code><span class="attribute">theme</span>: <span class="string">light</span>
+</code></pre><h2 id="Известные_проблемы-">Известные проблемы.</h2><ul>
+<li><p>Если на команды, начинающиеся с <code>nvm</code>, <code>npm</code> или <code>hexo</code>, терминал ругается, попробуйте сначала выполнить</p>
+<pre><code>nvm <span class="keyword">use</span> <span class="number">0.12</span>
+</code></pre></li>
+<li><p>Если Вы внесли изменения в запись или внешний вид темы, а при обновлении сайта с помощью <code>hexo deploy</code> эти изменения не отображаются, попробуйте перед генерацией сайта удалить директорию <code>public</code>. Затем снова выполните <code>hexo generate -d</code>. </p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pozitron57.github.io/2020/08/20/install-hexo/" data-id="ciaz6q5is000cgea70i2s4ve9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github-Pages/">Github Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/06/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Руководства/">Руководства</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Руководства/Генераторы-статических-сайтов/">Генераторы статических сайтов</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Руководства/Генераторы-статических-сайтов/Hexo/">Hexo</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Тестовые-записи/">Тестовые записи</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Тестовые-записи/Первые-записи/">Первые записи</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Тестовые-записи/Первые-записи/Несметное-богатство/">Несметное богатство</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-Pages/">Github Pages</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Github-Pages/" style="font-size: 10px;">Github Pages</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/test/" style="font-size: 20px;">test</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">август 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">июнь 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/20/install-hexo/">Установка Hexo и размещение сайта на Github Pages</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/16/my-first-post/">Моя первая запись. Пара примеров разметки Markdown.</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Вася Пупкин<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
